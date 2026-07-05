@@ -1,0 +1,16 @@
+{
+  "name": "ai-evaluator",
+  "version": "1.0.0",
+  "description": "AI-Powered Front-End Assignment Evaluator",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-git": "^3.36.0"
+  }
+}
