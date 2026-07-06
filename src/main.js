@@ -28,9 +28,12 @@ async function main() {
     process.exit(1);
   }
 
+  let repositoryPath = null;
+
   try {
     // 1. Clone repository
-    const { repositoryPath } = await cloneRepository(repoUrl);
+    const cloneResult = await cloneRepository(repoUrl);
+    repositoryPath = cloneResult.repositoryPath;
     console.log('Repository cloned successfully.');
 
     // 2. Scan repository to discover target source files metadata
@@ -74,14 +77,25 @@ async function main() {
     console.log(`Duration:        ${aiResponse.durationMs} ms`);
     console.log('--------------------------------');
 
-    // 9. Print complete raw response returned by the LLM
-    console.log('\n--- Raw AI Response ---');
-    console.log(aiResponse.text);
+    // 9. Write the complete raw response returned by the LLM
+    const aiOutputPath = path.join(OUTPUT_DIR, 'ai-evaluation.md');
+    await fs.writeFile(aiOutputPath, aiResponse.text, 'utf8');
+    console.log(`\nAI evaluation successfully written to:\noutput/ai-evaluation.md`);
 
   } catch (error) {
     console.error('\nExecution failed:');
     console.error(error.message);
     process.exit(1);
+  } finally {
+    if (repositoryPath) {
+      try {
+        await fs.rm(repositoryPath, { recursive: true, force: true });
+        console.log('\nTemporary repository removed successfully.');
+      } catch (cleanupError) {
+        console.warn('\nWarning:');
+        console.warn(`Failed to remove temporary repository:\n${repositoryPath}`);
+      }
+    }
   }
 }
 
