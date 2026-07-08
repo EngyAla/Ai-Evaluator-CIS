@@ -1,3 +1,4 @@
+/* ── Base card ── */
 .upload-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -6,8 +7,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  transition: border-color var(--transition-duration);
 }
 
+.upload-card-has-error {
+  border-color: var(--error-color);
+}
+
+/* ── Header ── */
 .upload-card-header {
   display: flex;
   align-items: flex-start;
@@ -39,22 +46,47 @@
   line-height: 1.4;
 }
 
+/* ── Drop zone (default) ── */
 .upload-dropzone {
-  border: 1px dashed var(--border-color);
+  border: 1.5px dashed var(--border-color);
   border-radius: var(--border-radius);
-  padding: 16px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  transition: border-color var(--transition-duration);
+  gap: 8px;
   cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .upload-dropzone:hover {
   border-color: var(--primary-color);
 }
 
+/* Drag-active state */
+.upload-dropzone-active {
+  border-color: var(--primary-color);
+  background-color: rgba(7, 141, 132, 0.06);
+  box-shadow: 0 0 0 3px rgba(7, 141, 132, 0.15);
+}
+
+/* Error state on the dropzone itself */
+.upload-dropzone-error {
+  border-color: var(--error-color);
+  background-color: rgba(239, 68, 68, 0.04);
+}
+
+/* Uploaded state — remove the dashes */
+.upload-dropzone-uploaded {
+  border-style: solid;
+  border-color: var(--border-color);
+  cursor: default;
+}
+
+/* ── Dropzone default content ── */
 .upload-dropzone-icon {
   width: 28px;
   height: 28px;
@@ -65,31 +97,49 @@
   font-size: 12px;
   color: var(--text-secondary);
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .upload-dropzone-or {
   color: var(--text-muted);
+  font-size: 11px;
 }
 
 .upload-browse-btn {
-  padding: 7px 16px !important;
-  font-size: 13px !important;
+  padding: 7px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: rgba(7, 141, 132, 0.08);
+  border: 1px solid rgba(7, 141, 132, 0.25);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-duration),
+    border-color var(--transition-duration);
 }
 
+.upload-browse-btn:hover {
+  background-color: rgba(7, 141, 132, 0.14);
+  border-color: var(--primary-color);
+}
+
+.upload-browse-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ── Uploaded state ── */
 .upload-file-info {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  background-color: rgba(7, 141, 132, 0.06);
-  border: 1px solid rgba(7, 141, 132, 0.15);
-  border-radius: var(--border-radius);
+  gap: 10px;
+  width: 100%;
 }
 
-.upload-file-icon {
-  width: 16px;
-  height: 16px;
+.upload-file-doc-icon {
+  width: 20px;
+  height: 20px;
   color: var(--primary-color);
   flex-shrink: 0;
 }
@@ -97,13 +147,13 @@
 .upload-file-details {
   flex: 1;
   display: flex;
-  align-items: center;
-  gap: 6px;
+  flex-direction: column;
   min-width: 0;
+  gap: 2px;
 }
 
 .upload-file-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
   white-space: nowrap;
@@ -114,18 +164,74 @@
 .upload-file-size {
   font-size: 11px;
   color: var(--text-muted);
+}
+
+.upload-file-check-icon {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
-.upload-file-rows {
+/* Replace / Remove buttons */
+.upload-file-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.upload-action-btn {
+  padding: 4px 10px;
   font-size: 11px;
-  color: var(--text-muted);
-  flex-shrink: 0;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background: transparent;
+  transition:
+    color var(--transition-duration),
+    border-color var(--transition-duration),
+    background-color var(--transition-duration);
 }
 
-.upload-file-check {
-  color: var(--success-color);
-  font-size: 14px;
-  font-weight: 700;
+.upload-replace-btn {
+  color: var(--text-secondary);
+}
+
+.upload-replace-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.upload-remove-btn {
+  color: var(--error-color);
+  border-color: transparent;
+}
+
+.upload-remove-btn:hover {
+  border-color: var(--error-color);
+  background-color: rgba(239, 68, 68, 0.06);
+}
+
+.upload-action-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ── Error message ── */
+.upload-error-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--error-color);
+  padding: 8px 10px;
+  background-color: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--border-radius);
+}
+
+.upload-error-icon {
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
 }

@@ -348,258 +348,353 @@ Prioritize the following common mistakes:
 - Ensure textarea default text is inside the element.
 
 # STUDENT SUBMISSION
-===== Lessons 24To27.html =====
+===== Task1.html =====
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <meta name="description" content="This Is Our Book Store" />
+  </head>
+  <body>
+    <header>
+      <h2>My Website</h2>
+      <ul>
+        <li><a href="http://">Home</a></li>
+        <li><a href="http://">About</a></li>
+        <li><a href="http://">Services</a></li>
+        <li><a href="http://">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <hr>
+    <nav>
+      <li><a href="http://">Link1</a></li>
+      <li><a href="http://">Link2</a></li>
+      <li><a href="http://">Link3</a></li>
+      <li><a href="http://">Link4</a></li>
+      <li><a href="http://">Link5</a></li>
+      <li><a href="http://">Link6</a></li>     
+    </nav>
+    <hr>
+
+    <main>
+        <article>
+            <h3>Article One</h3>
+            <p>This is a short description of first Content.</p>
+            <img src="" alt="image1">
+            <br>
+            <a href="http://">اقرا المزيد</a>
+        </article>
+        <hr>
+
+        <article>
+            <h3>Article Two</h3>
+            <p>This is a short description of Second Content.</p>
+            <img src="" alt="image2">
+            <br>
+            <a href="http://">اقرا المزيد</a>
+        </article>
+        <hr>
+
+        <article>
+            <h3>Article Three</h3>
+            <p>This is a short description of Third Content.</p>
+            <img src="" alt="image2">
+            <br>
+            <a href="http://">اقرا المزيد</a>
+        </article>
+        <hr>
+
+    </main>
+
+
+    <aside>
+      <h2>Categories</h2>
+
+      <ul>
+        <li>Link1</li>
+        <li>Link2</li>
+        <li>Link3</li>
+        <li>Link4</li>
+      </ul>
+    </aside>
+    <hr>
+    <footer>
+      <p>CopyRight 2021 &copy;</p>
+    </footer>
+  </body>
+</html>
+```
+
+===== Task2.html =====
+
+```html
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <meta name="description" content="This Is Our Book Store" />
+  </head>
+  <body>
+    
+    <audio controls loop autoplay>
+        <source src="" type=""> 
+        <source src="" type=""> 
+        <source src="" type=""> 
+        المتصفح لا يدعم هذا الملف الصوتي
+    </audio>
+
+    <video controls muted autoplay poster="">
+        <source src="" type="">
+        <source src="" type="">
+        <source src="" type="">
+        
+        لمتصفح لا يدعم هذا الملف المرئي
+    </video>
+  </body>
+</html>
+```
+
+===== Task3.html =====
+
+```html
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+
     <form action="test.py" method="post">
+
         <div>
-        <label>Username</label>
-        <input type="text" required placeholder="UserName" name="User">
+            <label for="uName">UserName : </label>
+            <input type="text" placeholder="املأ الحقل">
+            <hr>
         </div>
-        <hr>
+
         <div>
-        <label>Password</label>
-        <input type="Password"  placeholder="Password" name="Password">
+            <label for="Password">Password : </label>
+            <input type="password" placeholder="ضع كلمة مرور صعبة">
+            <hr>
         </div>
-        <hr>
+
         <div>
-        <label> Email</label>
-        <input type="email" required placeholder=" email" name="email">
+            <label for="mobile">Mobile : </label>
+            <input type="text" placeholder="املأ الحقل" required>
+            <hr>
         </div>
-        <hr>
+
         <div>
-        <label> Subject</label>
-        <input type=" text"  placeholder="Write Your Subject here" name="Subject">
+            <label for="Email">Email : </label>
+            <input type="email" placeholder="املأ الحقل" required>
+            <hr>
         </div>
-        <hr>
+
         <div>
-        <label> Mobile</label>
-        <input type="tel"  placeholder="+20100 (234) 123"  name="phone" >
+            <label for="subject">Subject : </label>
+            <input type="text" placeholder="املأ الحقل">
+            <hr>
         </div>
+        
         <div>
-        <input type="hidden"  value="welcome fans" name="fan" >
+            <label for="Num">Number : </label>
+            <input type="range" value="400" min="100" max="500" step="50">
+            <hr>
         </div>
-        <hr>
-        <div>
+
+        <input type="number" hidden value="1">
 
         <input type="reset" value="Empty Form">
-        </div>
-        <div>
-        <input type="submit" value="Send Data" >
-        </div>
-        <hr>
-        <div>
-        <label>range</label>
-        <input type="range" min="100" max="500" step="10" value="400">
-        </div>
+        <br> <br>
+        <input type="submit" value="Send Data">
+
     </form>
-
-
-
-
-
-
     
-</body>
-</html>
-
-
-```
-
-===== Lessons 28To30.html =====
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<form action="Lessons 28To30.html" >
-    <div>
-        <label for="username">Username</label>
-        <input type="text"  id="username" name="username" minlength="5" maxlength="20" required>
-    </div>
-    <div>
-        <label >Email</label>
-        <input type="email" value="o@o.com" readonly name="email">
-    </div>
-    <div>
-        <label ></label>
-        <input type="hidden"  value="b92f1fc2fce391ad7af633723afd3055" name="teken">
-    </div>
- 
-   <div>
-    <input type="checkbox" checked id=" Business Analyst" name="skills">
-    <label for=" Business Analyst">  Business Analyst </label>
-   </div>
-   
-   <div>
-    <input type="checkbox" id=" Back-End Develope" name="skills">
-    <label for=" Back-End Develope">  Back-End Develope </label>
-   </div>
-
-   <div>
-   
-    <input type="checkbox" id="Front-End Developer" name="skills">
-    <label for="Front-End Developer"> Front-End Developer </label>
-   </div>
-   </div>
-   <div>
-     <div>
-    <input type="checkbox" checked id=" Scrum Master" name="job">
-    <label for=" Scrum Master">  Scrum Master</label>
-   </div>
-   
-   <div>
-    <input type="checkbox" id="Project Manager" name="job">
-    <label for=" Project Manager">  Project Manager </label>
-   </div>
-
-   <div>
-    <label for="php">Choose Book:</label>
-    <select name="php" id="php" >
-        <optgroup label="PHP">
-            <option value="V5.0">V5.0</option>
-            <option value="V7.0">V7.0</option>
-            <option value="V8.0">V8.0</option>
-        </optgroup>
-        <optgroup label="Python" >
-            <option value="V2.0">V2.0</option>
-            <option value="V3.0">V3.0</option>
-            <option value="V3.9">V3.9</option>
-        </optgroup>
-    </select>
-   </div>
-   <hr>
-   <textarea name="object" id="" name="breif" placeholder="Write Here Why You Want To Learn Programming" cols="44" rows="22"></textarea>
- <div>
-        <input type="reset" value="Empty">
-        <input type="submit" value="Send">
-    </div>
-    </form>
-</body>
+  </body>
 </html>
 ```
 
-===== Lessons31to34.html =====
+===== Task4.html =====
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" target="_blank" novalidate>
-         <div>
-            <label for="Search">Search</label>
-            <br>
-            <br>
-            <input type="search"  id="Search"  placeholder=" Enter A Search Word" autofocus name="Search">
-        </div>
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+
+    <form action="Task4.html" method="get" >
+
         <div>
-            <br>
-            <label for="Upload">Upload</label>
-            <br>
-            <br>
-            <input type="file" id="Upload" name="Upload">
+            <label for="uName">UserName : </label>
+            <input type="text" name="UserName" placeholder="املأ الحقل" autofocus required minlength="5" maxlength="20">
+            <hr>
         </div>
-       <br>
-         <div>
-            <label for="url">Url</label>
-            <br>
-            <br>
-            <input type="url" id="url" name="url">
-        </div>
-        <br>
+
         <div>
-            <label for="date">Date</label>
-            <input type="date" id="date" value="1982-10-25"  name="date">
+            <label for="Email">Email : </label>
+            <input type="email" name="Email" placeholder="املأ الحقل" readonly value="Reda@gmail.com" >
+            <hr>
         </div>
-        <br>
-          <div>
-            <label for="month">Month</label>
-            <input type="month" id="month" value="1982-10" name="month">
+
+        <div>
+            <input type="hidden" name="Token" value="b92f1fc2fce391ad7af633723afd3055"  >     
         </div>
-        <br>
+
+        
+        <div>
+            <h3><b> Skills:</b></h3> 
+           <input type="checkbox" name="Skills" value="Problem Solving" id="P-Solving" checked>
+           <label for="P-Solving">Problem Solving</label>
+        </div>
+
+         <div>
+           <input type="checkbox" name="Skills" value="Analysis" id="Analysis">
+           <label for="Analysis">Analysis</label>
+        </div>
+
+        <div>
+           <input type="checkbox" name="Skills" value="Planning" id="Planning">
+           <label for="Planning">Planning</label>
+           <hr>
+        </div>
 
 
         <div>
-            <input type="reset" value="Empty">
-            <input type="submit" value="save">
+            <h3><b>Jobs:</b></h3> 
+           <input type="radio" name="Jobs" value="Front" id="Front" checked>
+           <label for="Front">Front-End</label>
+        </div>
+
+         <div>
+           <input type="radio" name="Jobs" value="Back" id="Back">
+           <label for="Back">Back-End</label>
+        </div>
+
+        <div>
+           <input type="radio" name="Jobs" value="P-Manager" id="P-Manager">
+           <label for="P-Manager">Project Manager</label>
+           <hr>
+        </div>
+
+
+        <label for="Books">Check Book : </label>
+        <select id="Books">
             
+
+            <optgroup label="PHP">
+                <option value="5">V5.0</option>
+                <option value="7">V7.0</option>
+                <option value="8">V8.0</option>
+            </optgroup>
+
+            <optgroup label="Python">
+                <option value="2">V2.0</option>
+                <option value="3">V3.0</option>
+                <option value="3.9">V3.9</option>
+            </optgroup>
+
+        </select>
+        <hr>
+
+        <div>
+            <textarea placeholder="Write here What do you want to learn Programming"></textarea>
+            <hr>
         </div>
+
+
+        <input type="reset" value="Empty ">
+        <br> <br>
+        <input type="submit" value="Send Data">
+
     </form>
-    <hr>
-    <code>
-        <pre>
-            Hello Line One
-            Hello Line Two
-            Hello Line Three
-                  Hello Line Four
-        </pre>
-    </code>
-    <!-- <iframe src="https://elzero.org/study/html-2021-study-plan/" frameborder="1" width="800px" height="600px"></iframe> -->
     
-</body>
+  </body>
 </html>
 ```
 
-===== Lessons35to37.html =====
+===== Task5.html =====
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <button type="submit">Send</button>
-    <h1>عنوان الصفحه</h1>
-    <h2>عنوان لقسم داخل الصفحة</h2>
-    <p>يحتوي على فقرة نصية</p>
-    lang
-    10 To 20
-    <div tabindex="0"></div>
-    ARIA==>Accessible Rich Internet Applications (Accessibility)
 
-<div class="choose-skill" role="radiogroup" aria-label="Choose Your Skill">
-  
-  <div 
-    class="skill" role="radio" tabindex="0" aria-checked="true"  aria-labelledby="skill1-label">
-    Python
-  </div>
-  <label id="skill1-label">Skill One</label>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
 
-  <div 
-    class="skill"  role="radio" tabindex="0" aria-checked="true" aria-labelledby="skill2-label">
-    PHP
-  </div>
-  <label id="skill2-label">Skill Two</label>
+    <form action="Task4.html" method="get" target="_blank" novalidate >
 
-  <div 
-    class="skill" role="radio" tabindex="o" aria-checked="true"  aria-labelledby="skill3-label">
-    JavaScript
-  </div>
-  <label id="skill3-label">Skill Three</label>
+        <div>
+            <label for="Search">Search: </label>
+            <input type="search" name="search" placeholder="Enter A Search Word" autofocus>
+            <hr>
+        </div>
 
-</div>
+        <div>
+            <label for="File">Upload : </label>
+            <input type="file" name="file">
+            <hr>
+        </div>
+
+       <div>
+            <label for="Url">Url : </label>
+            <input type="url" name="Url" required>
+            <hr>
+        </div>
+
+        <div>
+            <label for="Date">Date : </label>
+            <input type="date" name="Date" value="1982-10-25">
+            <hr>
+        </div>
+
+        <div>
+            <label for="Month">Month : </label>
+           <input type="month" name="Month" value="1982-10">
+            <hr>
+        </div>
+
+        <div>
+            <pre>
+                <code>
+                    Hello Line One
+                    Hello Line Two
+                    Hello Line Three
+                         Hello Line Four
+                </code>
+            </pre>
+            <hr>
+        </div>
+
+        <div>
+            <iframe src="https://elzero.org/" frameborder="0" width="400" height="400"></iframe>
+            <hr>
+        </div>
+
+        <input type="reset" value="Empty ">
+        <br> <br>
+        <input type="submit" value="Send Data">
+
+    </form>
     
-</body>
+  </body>
 </html>
 ```

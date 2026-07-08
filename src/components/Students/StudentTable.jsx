@@ -3,24 +3,43 @@ import StudentRow from './StudentRow.jsx';
 import SectionTitle from '../Typography/SectionTitle.jsx';
 import './StudentTable.css';
 
-const MOCK_STUDENTS = [
-  { student: 'Reda', repository: 'github.com/Reda-Eladl/Week2-html', status: 'Waiting' },
-  { student: 'Shahd', repository: 'github.com/shahd-askr/week-2', status: 'Waiting' },
-  { student: 'Doaa', repository: 'github.com/doaahelhussein-ops/week2', status: 'Waiting' },
-];
-
-export default function StudentTable() {
+/**
+ * Renders the detected students table.
+ *
+ * Props:
+ *   students {Array<{student, repositoryUrl}>} — parsed from uploaded CSV.
+ */
+export default function StudentTable({ students = [] }) {
   const [search, setSearch] = useState('');
 
-  const filtered = MOCK_STUDENTS.filter((s) =>
+  // ── Empty state ────────────────────────────────────────────────────
+  if (students.length === 0) {
+    return (
+      <div className="student-table-section">
+        <div className="student-table-header">
+          <SectionTitle>Detected Students</SectionTitle>
+        </div>
+        <div className="student-table-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="student-table-empty-icon">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+          </svg>
+          <p className="student-table-empty-title">No students detected.</p>
+          <p className="student-table-empty-hint">Upload a CSV file to begin.</p>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Filtered view ──────────────────────────────────────────────────
+  const filtered = students.filter((s) =>
     s.student.toLowerCase().includes(search.toLowerCase()) ||
-    s.repository.toLowerCase().includes(search.toLowerCase())
+    s.repositoryUrl.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <div className="student-table-section">
       <div className="student-table-header">
-        <SectionTitle count={MOCK_STUDENTS.length}>Detected Students</SectionTitle>
+        <SectionTitle count={students.length}>Detected Students</SectionTitle>
         <div className="student-table-search">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="search-icon">
             <circle cx="11" cy="11" r="8" />
@@ -47,8 +66,20 @@ export default function StudentTable() {
           </thead>
           <tbody>
             {filtered.map((s) => (
-              <StudentRow key={s.student} {...s} />
+              <StudentRow
+                key={s.student}
+                student={s.student}
+                repository={s.repositoryUrl}
+                status="Waiting"
+              />
             ))}
+            {filtered.length === 0 && (
+              <tr>
+                <td colSpan={3} className="student-table-no-match">
+                  No students match your search.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
