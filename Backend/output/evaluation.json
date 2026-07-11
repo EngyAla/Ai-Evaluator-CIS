@@ -1,0 +1,81 @@
+{
+  "summary": "Great work! However,",
+  "issues": [
+    {
+      "file": "24To27.html",
+      "message": "In `Lessons 24To27.html`",
+      "snippet": null
+    },
+    {
+      "file": "24To27.html",
+      "message": "Not all label and input pairs are separated from the next pair using `<hr>`.",
+      "snippet": null
+    },
+    {
+      "file": "28To30.html",
+      "message": "The range input does not have the expected `min=\"0\"`, `max=\"400\"`, and `step=\"50\"` attributes. In `Lessons 28To30.html`",
+      "snippet": null
+    },
+    {
+      "file": "28To30.html",
+      "message": "The username input is missing the `autofocus` attribute.",
+      "snippet": null
+    },
+    {
+      "file": "28To30.html",
+      "message": "The job inputs are using `type=\"checkbox\"` instead of the expected `type=\"radio\"`.",
+      "snippet": null
+    },
+    {
+      "file": "28To30.html",
+      "message": "The textarea has multiple `name` attributes, and the `name` attribute value \"breif\" is misspelled.",
+      "snippet": null
+    },
+    {
+      "file": "28To30.html",
+      "message": "The textarea's default text should be placed *inside* the element, not as a `placeholder`.",
+      "snippet": null
+    },
+    {
+      "file": "Lessons31to34.html",
+      "message": "The URL input is missing the `required` attribute.",
+      "snippet": null
+    },
+    {
+      "file": "Lessons31to34.html",
+      "message": "The iframe element is commented out and must be present.",
+      "snippet": null
+    },
+    {
+      "file": "Lessons31to34.html",
+      "message": "The iframe's `src` attribute value is not \"https://elzero.org\".",
+      "snippet": null
+    },
+    {
+      "file": "Lessons31to34.html",
+      "message": "The iframe's `width` attribute value is not \"100%\".",
+      "snippet": null
+    },
+    {
+      "file": "Lessons31to34.html",
+      "message": "The iframe's `height` attribute value is not \"400\".",
+      "snippet": null
+    },
+    {
+      "file": "Lessons35to37.html",
+      "message": "The accessibility range text should be \"10 to 20\", not \"10 To 20\".",
+      "snippet": null
+    },
+    {
+      "file": "Lessons35to37.html",
+      "message": "The ARIA acronym explanation includes extra text \"(Accessibility)\".",
+      "snippet": null
+    },
+    {
+      "file": "Lessons35to37.html",
+      "message": "The \"JavaScript\" skill `div` has `tabindex=\"o\"` (letter 'o') instead of `tabindex=\"0\"` (digit '0').",
+      "snippet": null
+    }
+  ],
+  "totalIssues": 15
+}
